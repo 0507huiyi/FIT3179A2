@@ -34,6 +34,7 @@
       },
       {
         "name": "Dim1_Selection",
+        "value":"Total",
         "bind":{
           "input": "select",
           "options":[
@@ -57,13 +58,14 @@
       "fields":["Dim1"],
       "bind":"legend"}
     },
+      "title":"Air Quality of different Residence Area of different Countries in specific Continent and Year",
       "mark": "point",
       "encoding": {
         "x": {
           "field": "Country",
           "type": "nominal",
-          "scale": {"domain": {"param": "brush"}},
-          "axis": {"title": "Country"}
+          "title":" ",
+          "scale": {"domain": {"param": "brush"}}
         },
         "y": {"field": "FactValueNumeric", "type": "quantitative","title":"PM2.5"},
         "color":{
@@ -101,6 +103,7 @@
       "transform": [
         {"filter":"Dim1_Selection == null || datum.Dim1 == Dim1_Selection"}
       ],
+      "title":"Air Quality of different Countries in specific Continent and Year",
       "mark": "bar",
       "params": [{
         "name": "brush",
